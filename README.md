@@ -1,0 +1,2 @@
+# scool-curriculum
+Package curriculum
