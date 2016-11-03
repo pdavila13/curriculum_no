@@ -1,0 +1,17 @@
+{
+    "name": "scool/curriculum",
+    "type": "library",
+    "require": {
+        "laravel/framework": "5.3.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paolo Davila",
+            "email": "pdavila@iesebre.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Scool\\Curriculum\\": "src"}
+    }
+}
