@@ -15,7 +15,16 @@ class CreateClassroomsTable extends Migration
     {
         Schema::create('classrooms', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('code');
+            $table->string('shortName');
+            $table->string('name');
             $table->timestamps();
+        });
+
+        Schema::table('courses', function ($table) {
+            $table->integer('courses_id')->unsigned();
+
+            $table->foreign('courses_id')->references('id')->on('courses')->onDelete('cascade');
         });
     }
 
