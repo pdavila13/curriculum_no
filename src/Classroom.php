@@ -1,10 +1,10 @@
 <?php
 
-namespace Scool\Curriculum\Study;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Study extends Model
+class Classroom extends Model
 {
     //
 }
