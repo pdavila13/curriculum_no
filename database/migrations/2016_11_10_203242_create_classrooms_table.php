@@ -19,11 +19,11 @@ class CreateClassroomsTable extends Migration
             $table->string('shortName');
             $table->string('name');
             $table->timestamps();
+
+            $table->integer('courses_id')->unsigned();
         });
 
         Schema::table('courses', function ($table) {
-            $table->integer('courses_id')->unsigned();
-
             $table->foreign('courses_id')->references('id')->on('courses')->onDelete('cascade');
         });
     }
