@@ -1,6 +1,7 @@
 <?php
 
 namespace Scool\Curriculum;
+
 class ScoolCurriculum
 {
     public static function factories()
