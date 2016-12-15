@@ -2,6 +2,7 @@
 
 namespace Scool\Curriculum\Providers;
 
+use Acacha\Names\Providers\NamesServiceProvider;
 use Illuminate\Support\ServiceProvider;
 use Scool\Curriculum\ScoolCurriculum;
 
@@ -15,6 +16,8 @@ class CurriculumServiceProvider extends ServiceProvider
         if (!defined('SCOOL_CURRICULUM_PATH')) {
             define('SCOOL_CURRICULUM_PATH', realpath(__DIR__.'/../../'));
         }
+
+        $this->registerNamesServiceProvide();
 
         $this->app->bind(\Scool\Curriculum\Repositories\StudyRepository::class, \Scool\Curriculum\Repositories\StudyRepositoryEloquent::class);
         //:end-bindings:
@@ -60,6 +63,14 @@ class CurriculumServiceProvider extends ServiceProvider
         $this->publishes(
             ScoolCurriculum::factories(),"scool_curriculum"
         );
+    }
+
+    /**
+     * Register acacha/names Service Provider
+     */
+    protected function registerNamesServiceProvide()
+    {
+        $this->app->register(NamesServiceProvider::class);
     }
 
     /**
