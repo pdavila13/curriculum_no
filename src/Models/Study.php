@@ -9,5 +9,5 @@ class Study extends Model
 {
     use nameable;
 
-
+    protected $fillable = ['name'];
 }
