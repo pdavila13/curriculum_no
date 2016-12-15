@@ -1,6 +1,6 @@
 <?php
 
-namespace Scool\Curriclum\Http\Controllers;
+namespace Scool\Curriculum\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

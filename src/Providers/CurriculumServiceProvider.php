@@ -27,6 +27,7 @@ class CurriculumServiceProvider extends ServiceProvider
     {
         $this->loadMigrations();
         $this->publishFactories();
+        $this->defineRoutes();
     }
 
     /**

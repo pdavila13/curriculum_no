@@ -11,7 +11,7 @@ use Scool\Curriculum\Http\Requests\StudyCreateRequest;
 use Scool\Curriculum\Http\Requests\StudyUpdateRequest;
 use Scool\Curriculum\Repositories\StudyRepository;
 use Scool\Curriculum\Validators\StudyValidator;
-use Scool\Curriclum\Http\Controllers\Controller;
+use Scool\Curriculum\Http\Controllers\Controller;
 
 
 class StudiesController extends Controller
