@@ -25,7 +25,6 @@ class StudyCreateRequest extends FormRequest
     {
         return [
             'name'      => 'required',
-            'law_id'    => 'required',
         ];
     }
 }
