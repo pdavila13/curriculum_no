@@ -87,6 +87,7 @@ class CurriculumServiceProvider extends ServiceProvider
         $this->app->bind(
             \Scool\Curriculum\Repositories\StudyRepository::class,
             \Scool\Curriculum\Repositories\StudyRepositoryEloquent::class);
+        $this->app->bind(\Scool\Curriculum\Repositories\ShitsRepository::class, \Scool\Curriculum\Repositories\ShitsRepositoryEloquent::class);
         //:end-bindings:
     }
 
