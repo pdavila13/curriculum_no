@@ -21,8 +21,7 @@ class CurriculumServiceProvider extends ServiceProvider
         $this->registerNamesServiceProvide();
         $this->registerStateFulServiceProvide();
 
-        $this->app->bind(\Scool\Curriculum\Repositories\StudyRepository::class, \Scool\Curriculum\Repositories\StudyRepositoryEloquent::class);
-        //:end-bindings:
+        $this->bindRepositories();
     }
 
     /**
@@ -81,6 +80,14 @@ class CurriculumServiceProvider extends ServiceProvider
     protected function registerStateFulServiceProvide()
     {
         $this->app->register(StatefulServiceProvider::class);
+    }
+
+    public function bindRepositories()
+    {
+        $this->app->bind(
+            \Scool\Curriculum\Repositories\StudyRepository::class,
+            \Scool\Curriculum\Repositories\StudyRepositoryEloquent::class);
+        //:end-bindings:
     }
 
     /**
