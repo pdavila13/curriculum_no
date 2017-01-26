@@ -1,8 +1,9 @@
 {
     "version": 2,
     "paths": [
-        "../../stateful-eloquent",
-        "../../acacha/names",
-        "../../acacha/l5-repository"
+        "../foundation",
+        "../../acacha/stateful-eloquent",
+        "../../acacha/l5-repository",
+        "../../acacha/names"
     ]
 }
