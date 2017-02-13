@@ -11,7 +11,6 @@ use Scool\Curriculum\Http\Requests\ShitsUpdateRequest;
 use Scool\Curriculum\Repositories\ShitsRepository;
 use Scool\Curriculum\Validators\ShitsValidator;
 
-
 class ShitsController extends Controller
 {
 
@@ -43,7 +42,6 @@ class ShitsController extends Controller
         $shits = $this->repository->all();
 
         if (request()->wantsJson()) {
-
             return response()->json([
                 'data' => $shits,
             ]);
@@ -61,9 +59,7 @@ class ShitsController extends Controller
      */
     public function store(ShitsCreateRequest $request)
     {
-
         try {
-
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
 
             $shit = $this->repository->create($request->all());
@@ -74,7 +70,6 @@ class ShitsController extends Controller
             ];
 
             if ($request->wantsJson()) {
-
                 return response()->json($response);
             }
 
@@ -104,7 +99,6 @@ class ShitsController extends Controller
         $shit = $this->repository->find($id);
 
         if (request()->wantsJson()) {
-
             return response()->json([
                 'data' => $shit,
             ]);
@@ -123,7 +117,6 @@ class ShitsController extends Controller
      */
     public function edit($id)
     {
-
         $shit = $this->repository->find($id);
 
         return view('shits.edit', compact('shit'));
@@ -140,9 +133,7 @@ class ShitsController extends Controller
      */
     public function update(ShitsUpdateRequest $request, $id)
     {
-
         try {
-
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
 
             $shit = $this->repository->update($request->all(), $id);
@@ -153,15 +144,12 @@ class ShitsController extends Controller
             ];
 
             if ($request->wantsJson()) {
-
                 return response()->json($response);
             }
 
             return redirect()->back()->with('message', $response['message']);
         } catch (ValidatorException $e) {
-
             if ($request->wantsJson()) {
-
                 return response()->json([
                     'error'   => true,
                     'message' => $e->getMessageBag()
@@ -185,7 +173,6 @@ class ShitsController extends Controller
         $deleted = $this->repository->delete($id);
 
         if (request()->wantsJson()) {
-
             return response()->json([
                 'message' => 'Shits deleted.',
                 'deleted' => $deleted,
