@@ -38,7 +38,7 @@ In your `config/app.php` add `CurriculumServiceProvider::class` to the end of th
 Publish configuration
 
 ```bash
-php artisan vendor:publish --tag=scool_curriculum
+$ php artisan vendor:publish --tag=scool_curriculum
 ```
 
 ## Database ##
