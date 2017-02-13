@@ -13,8 +13,7 @@ class ShitsCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        if(Auth::user()->can('update shits'))
-        {
+        if (Auth::user()->can('update shits')) {
             return true;
         }
 
