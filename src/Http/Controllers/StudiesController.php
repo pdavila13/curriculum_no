@@ -13,7 +13,6 @@ use Scool\Curriculum\Repositories\StudyRepository;
 use Scool\Curriculum\Validators\StudyValidator;
 use Scool\Curriculum\Http\Controllers\Controller;
 
-
 class StudiesController extends Controller
 {
 
@@ -45,7 +44,6 @@ class StudiesController extends Controller
         $studies = $this->repository->all();
 
         if (request()->wantsJson()) {
-
             return response()->json([
                 'data' => $studies,
             ]);
@@ -63,9 +61,7 @@ class StudiesController extends Controller
      */
     public function store(StudyCreateRequest $request)
     {
-
         try {
-
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
 
             $study = $this->repository->create($request->all());
@@ -76,7 +72,6 @@ class StudiesController extends Controller
             ];
 
             if ($request->wantsJson()) {
-
                 return response()->json($response);
             }
 
@@ -106,7 +101,6 @@ class StudiesController extends Controller
         $study = $this->repository->find($id);
 
         if (request()->wantsJson()) {
-
             return response()->json([
                 'data' => $study,
             ]);
@@ -125,7 +119,6 @@ class StudiesController extends Controller
      */
     public function edit($id)
     {
-
         $study = $this->repository->find($id);
 
         return view('studies.edit', compact('study'));
@@ -142,9 +135,7 @@ class StudiesController extends Controller
      */
     public function update(StudyUpdateRequest $request, $id)
     {
-
         try {
-
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
 
             $study = $this->repository->update($id, $request->all());
@@ -155,15 +146,12 @@ class StudiesController extends Controller
             ];
 
             if ($request->wantsJson()) {
-
                 return response()->json($response);
             }
 
             return redirect()->back()->with('message', $response['message']);
         } catch (ValidatorException $e) {
-
             if ($request->wantsJson()) {
-
                 return response()->json([
                     'error'   => true,
                     'message' => $e->getMessageBag()
@@ -187,7 +175,6 @@ class StudiesController extends Controller
         $deleted = $this->repository->delete($id);
 
         if (request()->wantsJson()) {
-
             return response()->json([
                 'message' => 'Study deleted.',
                 'deleted' => $deleted,

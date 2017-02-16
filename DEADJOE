@@ -1,0 +1,27 @@
+
+*** These modified files were found in JOE when it aborted on Thu Feb 16 19:48:51 2017
+*** JOE was aborted because the terminal closed
+
+*** File '/home/pdavila/Code/scool/curriculum/.git/MERGE_MSG'
+Merge
+
+ branch 'master' of github.com:pdavila13/scool-curriculum
+
+# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.
+
+*** File '(Unnamed)'
+.bashrc
+.zshrc
+.zshrc
+.bashrc
+.zshrc
+/home/pdavila/Code/tinkeringEvents/.git/MERGE_MSG
+.ssh/config
+.ssh/config
+.ssh/config
+.ssh/config
+/home/pdavila/Code/scool/curriculum/.git/MERGE_MSG
